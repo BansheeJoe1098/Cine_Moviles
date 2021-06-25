@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_cartelera_MDB">
+    <fragment
+        android:id="@+id/nav_cartelera_MDB"
+        android:name="com.example.cine.ui.Cartelera"
+        android:label="Cartelera"
+        tools:layout="@layout/cartelera_fragment" >
+        <action
+            android:id="@+id/action_nav_cartelera_MDB_to_horario"
+            app:destination="@id/horario" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_ticket_MDB"
+        android:name="com.example.cine.ui.Ticket"
+        android:label="Boleto de Compra"
+        tools:layout="@layout/ticket_fragment" />
+    <fragment
+        android:id="@+id/horario"
+        android:name="com.example.cine.ui.Horario"
+        android:label="Compra Boletos y Horarios"
+        tools:layout="@layout/horario_fragment">
+        <action
+            android:id="@+id/action_horario_to_nav_ticket_MDB"
+            app:destination="@id/nav_ticket_MDB"
+            app:popUpTo="@id/nav_cartelera_MDB" />
+    </fragment>
+</navigation>
